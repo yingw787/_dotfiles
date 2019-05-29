@@ -52,4 +52,19 @@ driver updates as cheap as possible.
 
 ### Tooling Matrix
 
+#### Language-Specific Tooling
+
+Aspect/Language | Markdown | Python | JavaScript
+---|---|---|---
+Linting | [`markdownlint`](https://github.com/DavidAnson/markdownlint) | [`pylint`](https://github.com/PyCQA/pylint) | [`eslint`](https://github.com/eslint/eslint)
+Versioning | N/A | [`conda`](https://github.com/conda/conda) | [`n`](https://github.com/tj/n)
+Package Management | N/A | [`conda`](https://github.com/conda/conda) | [`yarn`](https://github.com/yarnpkg/yarn)
+Unit testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A
+Integration testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A
+Test Coverage | N/A | [`pytest-cov`](https://github.com/pytest-dev/pytest-cov) | N/A
+Test Parallelization | N/A | [`pytest-xdist`](https://github.com/pytest-dev/pytest-xdist) | N/A
+Property-based / Generative Testing | N/A | [`hypothesis`](https://github.com/HypothesisWorks/hypothesis) | N/A
+Formal Reasoning Test Frameworks| N/A | [`z3`](https://github.com/Z3Prover/z3) or [`tlaplus`](https://github.com/tlaplus/tlaplus) | N/A
+Binary Analysis / Concolic Testing | N/A | [`angr`](https://github.com/angr/angr) | N/A
+
 ## What's Not Included
