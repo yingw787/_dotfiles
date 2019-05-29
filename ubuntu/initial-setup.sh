@@ -18,4 +18,14 @@
 # 4. Run `git config --global user.email "$YOUR_EMAIL_HERE" && git config --global user.name "$YOUR_NAME_HERE"
 #    to configure a global `git` name and email for git commits.
 
-# 5. Run `cd ~ && git clone git@github.com:yingw787/dotfiles.git` to clone repository.
+# 5. Run `cd ~ && git clone git@github.com:yingw787/dotfiles.git` to clone the
+#    `dotfiles` repository, and follow the README instructions to get started.
+
+
+# Get a copy of Microsoft Visual Studio Code.
+sudo apt-get update
+sudo apt-get install software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt-get update
+sudo apt-get install code
