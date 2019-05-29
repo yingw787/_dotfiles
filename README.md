@@ -68,3 +68,7 @@ Formal Reasoning Test Frameworks| N/A | [`z3`](https://github.com/Z3Prover/z3) o
 Binary Analysis / Concolic Testing | N/A | [`angr`](https://github.com/angr/angr) | N/A
 
 ## What's Not Included
+
+-   **Device Configuration**: This includes:
+    -   Monitor configuration
+    -   Keyboard layout
