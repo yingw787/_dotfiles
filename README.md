@@ -52,6 +52,14 @@ driver updates as cheap as possible.
 
 ### Tooling Matrix
 
+#### System-Specific Tooling
+
+-   **Version Control System**: [`git`](https://github.com/git/git)
+
+-   **System Resource Monitor**: [`gtop`](https://github.com/aksakalli/gtop)
+
+-   **GPU System Resource Monitor**: [`nvtop`](https://github.com/Syllo/nvtop)
+
 #### Language-Specific Tooling
 
 Aspect/Language | Markdown | Python | JavaScript
