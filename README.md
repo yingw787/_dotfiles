@@ -48,6 +48,34 @@ driver updates as cheap as possible.
     curve. The less frequently I update my `dotfiles`, the more I will consider
     this effort a success.
 
+-   **Explicit is better than implicit**: A [discussion on Hacker News around
+    reproducible Dockerfiles](https://news.ycombinator.com/item?id=20031730)
+    gives insight around implicit vs. explicit dependency management:
+
+    > > The first version is to lock down every dependency as tightly as you can
+    > to avoid accidentally breaking something...The second version is upgrade
+    > early, upgrade often...Google is an excellent example of a company that
+    > does this.
+
+    > This is misleading. My understanding of Google's internal build systems is
+    > that they ruthlessly lock down the version of every single dependency, up
+    > to and including the compiler binary itself. They then provide tooling on
+    > top of that to make it easier to upgrade those locked down versions
+    > regularly.
+
+    > The core problem is that when your codebase gets to the kind of scale that
+    > Google's has, if you can't reproduce the entire universe of your
+    > dependencies, there is no way any historical commit of anything will ever
+    > build. That makes it difficult to do basic things like maintain release
+    > branches or bisect bugs.
+
+    > > if you want to lock down version numbers for a specific release, have an
+    > automated tool supply the right ones for you. And make it trivial to
+    > upgrade early, and upgrade often.
+
+    > This part sounds like a more accurate description of what Google and
+    > others do, yes.
+
 ## What's Included
 
 ### Tooling Matrix
@@ -67,10 +95,12 @@ Aspect/Language | Markdown | Python | JavaScript
 Linting | [`markdownlint`](https://github.com/DavidAnson/markdownlint) | [`pylint`](https://github.com/PyCQA/pylint) | [`eslint`](https://github.com/eslint/eslint)
 Versioning | N/A | [`conda`](https://github.com/conda/conda) | [`n`](https://github.com/tj/n)
 Package Management | N/A | [`conda`](https://github.com/conda/conda) | [`yarn`](https://github.com/yarnpkg/yarn)
+Dependency Upgrade Management | N/A | [`pyup`](https://github.com/pyupio/pyup) | N/A
 Unit testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A
 Integration testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A
 Test Coverage | N/A | [`pytest-cov`](https://github.com/pytest-dev/pytest-cov) | N/A
 Test Parallelization | N/A | [`pytest-xdist`](https://github.com/pytest-dev/pytest-xdist) | N/A
+Test CLI Prettify | N/A | [`pytest-sugar`](https://github.com/Frozenball/pytest-sugar) | N/A
 Property-based / Generative Testing | N/A | [`hypothesis`](https://github.com/HypothesisWorks/hypothesis) | N/A
 Formal Reasoning Test Frameworks| N/A | [`z3`](https://github.com/Z3Prover/z3) or [`tlaplus`](https://github.com/tlaplus/tlaplus) | N/A
 Binary Analysis / Concolic Testing | N/A | [`angr`](https://github.com/angr/angr) | N/A
@@ -78,5 +108,15 @@ Binary Analysis / Concolic Testing | N/A | [`angr`](https://github.com/angr/angr
 ## What's Not Included
 
 -   **Device Configuration**: This includes:
-    -   Monitor configuration
-    -   Keyboard layout
+
+    -   Monitor configuration: What orientation your monitors are in, how many
+        monitors you have, etc.
+
+    -   Keyboard layout: I personally use Dvorak, but adding that to `dotfiles`
+        will simply make it harder for the next person to work on them.
+
+-   **OS-Specific Configuration**: This includes:
+
+    -   Theming: GNOME, KDE, Unity, etc. have different packages available for
+        different themes, with different tooling. This is all also not
+        compatible with non-Linux systems like macOS or Windows.
