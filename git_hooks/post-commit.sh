@@ -13,5 +13,5 @@ COMMIT_HEAD=$(git rev-parse HEAD)
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
 sed \
-    -i "s/# Commit ID (SHA-1):.*$/# Commit ID (SHA-1): $COMMIT_HEAD/" \
+    -i "s/# Commit ID (SHA-1):.*$/# Commit ID (SHA-1): '$COMMIT_HEAD'/" \
     $REPO_ROOT/setup.sh
