@@ -78,7 +78,7 @@ driver updates as cheap as possible.
 
 ## What's Included
 
-### Tooling Matrix
+### Tooling Matrix;
 
 #### System-Specific Tooling
 
@@ -86,37 +86,38 @@ driver updates as cheap as possible.
 
 -   **System Resource Monitor**: [`gtop`](https://github.com/aksakalli/gtop)
 
--   **GPU System Resource Monitor**: [`nvtop`](https://github.com/Syllo/nvtop)
+-   **GPU-specific System Resource Monitor**:
+    [`nvtop`](https://github.com/Syllo/nvtop)
 
 #### Language-Specific Tooling
 
-Aspect/Language | Markdown | Python | JavaScript
----|---|---|---
-Linting | [`markdownlint`](https://github.com/DavidAnson/markdownlint) | [`pylint`](https://github.com/PyCQA/pylint) | [`eslint`](https://github.com/eslint/eslint)
-Versioning | N/A | [`conda`](https://github.com/conda/conda) | [`n`](https://github.com/tj/n)
-Package Management | N/A | [`conda`](https://github.com/conda/conda) | [`yarn`](https://github.com/yarnpkg/yarn)
-Dependency Upgrade Management | N/A | [`pyup`](https://github.com/pyupio/pyup) | N/A
-Unit testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A
-Integration testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A
-Test Coverage | N/A | [`pytest-cov`](https://github.com/pytest-dev/pytest-cov) | N/A
-Test Parallelization | N/A | [`pytest-xdist`](https://github.com/pytest-dev/pytest-xdist) | N/A
-Test CLI Prettify | N/A | [`pytest-sugar`](https://github.com/Frozenball/pytest-sugar) | N/A
-Property-based / Generative Testing | N/A | [`hypothesis`](https://github.com/HypothesisWorks/hypothesis) | N/A
-Formal Reasoning Test Frameworks| N/A | [`z3`](https://github.com/Z3Prover/z3) or [`tlaplus`](https://github.com/tlaplus/tlaplus) | N/A
-Binary Analysis / Concolic Testing | N/A | [`angr`](https://github.com/angr/angr) | N/A
+Aspect/Language | Markdown | Python | JavaScript | Golang | Haskell | Ruby | Shell (bash)
+---|---|---|---|---|---|---|---
+Linting | [`markdownlint`](https://github.com/DavidAnson/markdownlint) | [`pylint`](https://github.com/PyCQA/pylint) | [`eslint`](https://github.com/eslint/eslint) | N/A | N/A | N/A | [`shellcheck`](https://github.com/koalaman/shellcheck)
+Versioning | N/A | [`conda`](https://github.com/conda/conda) | [`n`](https://github.com/tj/n) | N/A | N/A | N/A | N/A
+Package Management | N/A | [`conda`](https://github.com/conda/conda) | [`yarn`](https://github.com/yarnpkg/yarn) | N/A | N/A | N/A | N/A
+Dependency Upgrade Management | N/A | [`pyup`](https://github.com/pyupio/pyup) | N/A | N/A | N/A | N/A | N/A
+Unit testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A | N/A | N/A | N/A | N/A
+Integration testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A | N/A | N/A | N/A | N/A
+Test Coverage | N/A | [`pytest-cov`](https://github.com/pytest-dev/pytest-cov) | N/A | N/A | N/A | N/A | N/A
+Test Parallelization | N/A | [`pytest-xdist`](https://github.com/pytest-dev/pytest-xdist) | N/A | N/A | N/A | N/A | N/A
+Test CLI Prettify | N/A | [`pytest-sugar`](https://github.com/Frozenball/pytest-sugar) | N/A | N/A | N/A | N/A | N/A
+Property-based / Generative Testing | N/A | [`hypothesis`](https://github.com/HypothesisWorks/hypothesis) | N/A | N/A | N/A | N/A | N/A
+
+#### Miscellaneous Tooling
+
+-   **Link Checker (to prevent [link
+    rot](https://en.wikipedia.org/wiki/Link_rot))**:
+    [`linkchecker`](https://github.com/filiph/linkcheck)
+
+-   **Model Checker**: [`Z3`](https://github.com/Z3Prover/z3) or
+    [`TLA+`](https://github.com/tlaplus/tlaplus)
+
+-   **Concolic Testing**: [`angr`](https://github.com/angr/angr)
 
 ## What's Not Included
 
 -   **Device Configuration**: This includes:
 
     -   Monitor configuration: What orientation your monitors are in, how many
-        monitors you have, etc.
-
-    -   Keyboard layout: I personally use Dvorak, but adding that to `dotfiles`
-        will simply make it harder for the next person to work on them.
-
--   **OS-Specific Configuration**: This includes:
-
-    -   Theming: GNOME, KDE, Unity, etc. have different packages available for
-        different themes, with different tooling. This is all also not
-        compatible with non-Linux systems like macOS or Windows.
+        monitors you have, trackpad speed, scroll orientation, etc.
