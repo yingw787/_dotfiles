@@ -119,9 +119,16 @@ Documentation Generator | N/A | [`sphinx`](https://github.com/sphinx-doc/sphinx/
 -   **Markdown Table of Contents Generator**:
     [`doctoc`](https://github.com/thlorenz/doctoc)
 
+-   **English Spellchecker**: N/A
+
+-   **[i18n
+    (internationalization)](https://en.wikipedia.org/wiki/Internationalization_and_localization)**: N/A
+
+-   **Static website generator**: [`hugo`](https://github.com/gohugoio/hugo)
+
 ## What's Not Included
 
 -   **Device Configuration**: This includes:
 
-    -   Monitor configuration: What orientation your monitors are in, how many
+    -   Device configuration: What orientation your monitors are in, how many
         monitors you have, trackpad speed, scroll orientation, etc.
