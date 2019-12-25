@@ -2,7 +2,7 @@
 #
 # Dotfiles setup from `git@github.com:yingw787/dotfiles.git`.
 #
-# Commit ID (SHA-1): '8986be2ecd6acbdaab43d755dfc92e8579a2c0be'
+# Commit ID (SHA-1): '56506b1280d05a0e86161c2772801436b0ba69b3'
 #
 # This script is intended to be hosted at https://dotfiles.yingw787.com for
 # configuring Ying's personal development setup.
@@ -62,10 +62,12 @@ echo "$LOG_PREFIX env variable '\$HOME' is: '$HOME'"
 echo "$LOG_PREFIX Location of dotfiles remote repository is: '$repository'"
 echo "$LOG_PREFIX Location of dotfiles local repository is: '$destination'"
 
+install_script="$destination/ubuntu/setup-ubuntu.sh"
+
 # Manually checkpoint execution to exit or continue.
 quit_or_continue() {
     while true; do
-        read -p "Initial setup completed. Continue? [Y/n] " yn
+        read -p "Initial setup completed. Continue to '$install_script'? [Y/n] " yn
         case $yn in
             [Yy]* ) echo "Continuing setup."; break;;
             [Nn]* ) echo "Exiting."; exit;;
@@ -76,5 +78,4 @@ quit_or_continue() {
 quit_or_continue
 
 # Execute Ubuntu install #
-install_script="$destination/ubuntu/setup-ubuntu.sh"
-echo "$LOG_PREFIX Executing install script '$install_script'."
+bash $install_script
