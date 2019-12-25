@@ -2,7 +2,7 @@
 #
 # Dotfiles setup from `git@github.com:yingw787/dotfiles.git`.
 #
-# Commit ID (SHA-1): '5aee44d44666fd122128237ccafe940fb2a4f971'
+# Commit ID (SHA-1): '557a62731aa99cddf00353369e8810416212f74c'
 #
 # This script is intended to be hosted at https://dotfiles.yingw787.com for
 # configuring Ying's personal development setup.
@@ -10,13 +10,9 @@
 # Assumptions:
 # - Using Ubuntu Desktop 19.10 64-bit build
 # - Internet is reachable
+# - User has `sudo` privileges (e.g. is root)
 
 LOG_PREFIX="[https://dotfiles.yingw787.com]"
-
-# Install system updates #
-echo "$LOG_PREFIX Installing system updates."
-sudo apt-get update
-sudo apt-get full-upgrade
 
 # Install latest version of `git` for this Ubuntu release #
 #
@@ -26,8 +22,8 @@ sudo apt-get full-upgrade
 # version is to build `git` from source, which I do not think is necessary at
 # this time.
 echo "$LOG_PREFIX Installing latest stable `git` for distribution."
-sudo add-apt-repository ppa:git-core/ppa
-sudo apt-get install git
+add-apt-repository ppa:git-core/ppa
+apt-get install git
 
 # `git` clone repository https://github.com/yingw787/dotfiles at HEAD to
 # directory on local.
