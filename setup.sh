@@ -21,13 +21,14 @@ LOG_PREFIX="[https://dotfiles.yingw787.com]"
 # candidate and stable PPAs are available. The only way to lock in a specific
 # version is to build `git` from source, which I do not think is necessary at
 # this time.
-echo "$LOG_PREFIX Installing latest stable `git` for distribution."
-add-apt-repository ppa:git-core/ppa
-apt-get install git
-
-# Checkpoint `git` install to ensure:
-# - `git` install exists.
-command -v git || echo "$LOG_PREFIX git installation failed." && exit 1
+echo "$LOG_PREFIX Install / check 'git' distribution."
+if ! [ -x "$(command -v git)" ];
+then
+    add-apt-repository ppa:git-core/ppa
+    apt-get install git
+else
+    echo "$LOG_PREFIX 'git' exists, skipping install."
+fi
 
 # `git` clone repository https://github.com/yingw787/dotfiles at HEAD to
 # directory on local.
@@ -41,43 +42,39 @@ repository="https://github.com/yingw787/dotfiles"
 destination="$HOME/dotfiles"
 
 echo "$LOG_PREFIX Cloning dotfiles repository $REPOSITORY to directory $destination."
-git clone \
-    --verbose \
-    --progress \
-    $repository $destination
+if ! [ -d $destination ];
+then
+    git clone --verbose --progress $repository $destination
+else
+    echo "$LOG_PREFIX 'dotfiles' directory exists, skipping git clone."
+fi
 
 # Log metadata about:
 # - `git` version
-# - `git` filesystem
 # - Environment variable $HOME
 # - Location of `dotfiles` remote repository
 # - Location of `dotfiles` local repository
 GIT_VERSION=$(git --version)
-GIT_LOCATION=$(which git)
 
-echo "$LOG_PREFIX `git` installed."
-echo "$LOG_PREFIX `git` install version: '$GIT_VERSION'"
-echo "$LOG_PREFIX `git` install filesystem: '$GIT_LOCATION'"
+echo "$LOG_PREFIX 'git' installed."
+echo "$LOG_PREFIX 'git' install version: '$GIT_VERSION'"
 echo "$LOG_PREFIX env variable '\$HOME' is: '$HOME'"
-echo "$LOG_PREFIX Location of dotfiles remote repository is: $repository"
-echo "$LOG_PREFIX Location of dotfiles local repository is: $destination"
+echo "$LOG_PREFIX Location of dotfiles remote repository is: '$repository'"
+echo "$LOG_PREFIX Location of dotfiles local repository is: '$destination'"
 
 # Manually checkpoint execution to exit or continue.
-# [Ctrl + C] to exit.
-# [Enter] to continue.
-echo "Initial setup completed. Press [Ctrl + C] to quit, [Enter] to continue."
-trap quit_or_continue SIGINT
 quit_or_continue() {
-    read -s -n 1 key
-    if [[ $key = "" ]];
-    then
-        continue
-    else
-        echo "Exiting."
-        exit 0
+    while true; do
+        read -p "Initial setup completed. Continue? [Y/n] " yn
+        case $yn in
+            [Yy]* ) echo "Continuing setup."; break;;
+            [Nn]* ) echo "Exiting."; exit;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
 }
+quit_or_continue
 
-# # Execute Ubuntu install #
-# install_script="$destination/ubuntu/setup-ubuntu.sh"
-# echo "$LOG_PREFIX Executing install script '$install_script'."
-# bash $install_script
+# Execute Ubuntu install #
+install_script="$destination/ubuntu/setup-ubuntu.sh"
+echo "$LOG_PREFIX Executing install script '$install_script'."
