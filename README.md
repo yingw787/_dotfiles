@@ -97,12 +97,12 @@ Linting | [`markdownlint`](https://github.com/DavidAnson/markdownlint) | [`pylin
 Versioning | N/A | [`conda`](https://github.com/conda/conda) | [`n`](https://github.com/tj/n) | N/A | N/A | N/A | N/A
 Package Management | N/A | [`conda`](https://github.com/conda/conda) | [`yarn`](https://github.com/yarnpkg/yarn) | N/A | N/A | N/A | N/A
 Dependency Upgrade Management | N/A | [`pyup`](https://github.com/pyupio/pyup) | N/A | N/A | N/A | N/A | N/A
-Unit testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A | N/A | N/A | N/A | N/A
+Unit testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A | N/A | [`hspec`](https://hackage.haskell.org/package/hspec) | N/A | N/A
 Integration testing | N/A | [`pytest`](https://github.com/pytest-dev/pytest) | N/A | N/A | N/A | N/A | N/A
 Test Coverage | N/A | [`pytest-cov`](https://github.com/pytest-dev/pytest-cov) | N/A | N/A | N/A | N/A | N/A
 Test Parallelization | N/A | [`pytest-xdist`](https://github.com/pytest-dev/pytest-xdist) | N/A | N/A | N/A | N/A | N/A
 Test CLI Prettify | N/A | [`pytest-sugar`](https://github.com/Frozenball/pytest-sugar) | N/A | N/A | N/A | N/A | N/A
-Property-based / Generative Testing | N/A | [`hypothesis`](https://github.com/HypothesisWorks/hypothesis) | N/A | N/A | N/A | N/A | N/A
+Property-based / Generative Testing | N/A | [`hypothesis`](https://github.com/HypothesisWorks/hypothesis) | N/A | N/A | [`quickcheck`](https://hackage.haskell.org/package/QuickCheck) | N/A | N/A
 
 #### Miscellaneous Tooling
 
