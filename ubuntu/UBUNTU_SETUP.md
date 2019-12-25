@@ -120,3 +120,24 @@ rules](FLIGHT_RULES.md).
     for login to "Require my password to log in".
 
     Click button "Continue".
+
+10. Wait for installation process to run.
+
+11. In window "Installation Complete", click button "Restart Now", then close
+    the window and select "Power off the machine".
+
+## Cloning a Virtual Machine
+
+1.  In window "Oracle VM VirtualBox Manager", right-click the virtual machine to
+    be cloned, and select "Clone" from the dropdown menu.
+
+2.  In window "New machine name and path", set option "Name" to $NAME. Leave
+    default option "Path" to `$HOME/"VirtualBox VMs"`. Leave default option "MAC
+    Address Policy" to "Include only NAT network adapter MAC addresses". Do not
+    select additional options "Keep Disk Names" and "Keep Hardware UUIDs".
+
+    Click button "Next >".
+
+3.  In window "Clone type", leave default option "Full clone".
+
+    Click button "Clone".
