@@ -21,7 +21,7 @@ rules](FLIGHT_RULES.md).
   64-bit Linux (amd64), available
   [here](releases.ubuntu.com/19.10/ubuntu-19.10-desktop-amd64.iso).
 
-## Steps
+## VirtualBox VM Setup Steps
 
 1.  Open program "Oracle VM VirtualBox Manager".
 
@@ -59,3 +59,64 @@ rules](FLIGHT_RULES.md).
     allocated".
 
     Click button "Next >".
+
+8.  In window "File location and size", leave default option for virtual hard
+    disk file file path. This should be:
+
+    ```bash
+    VIRTUALBOX_VM_NAME="Ubuntu-19.10-desktop-amd64-base"
+    echo $HOME/"VirtualBox VMs"/$VIRTUALBOX_VM_NAME/$VIRTUALBOX_VM_NAME
+    ```
+
+    Leave default option for hard drive size to be "10.00 GB".
+
+    Click button "Create".
+
+## Ubuntu 19.10 Install Steps
+
+1.  Select VM "Ubuntu-19.10-desktop-amd64-base".
+
+    Click button "Start".
+
+2.  In window "Select start-up disk", select the Ubuntu 19.10 .iso file in your
+    filesystem. This path should be:
+
+    ```bash
+    $HOME/Downloads/ubuntu-19.10-desktop-amd64.iso
+    ```
+
+    Click button "Start".
+
+3.  In window "Welcome", click on button "Install Ubuntu".
+
+4.  In window "Keyboard layout", select language "English (US)" and keyboard
+    layout "English (US) - English (Dvorak)".
+
+5.  In window "Updates and other software", select "Minimal installation", and
+    select "Download updates while installing Ubuntu" and "Install third-party
+    software for graphics and Wi-Fi hardware and additional media formats".
+
+    Click button "Continue".
+
+6.  In window "Installation type", select "Erase disk and install Ubuntu".
+
+    Do NOT select "Encrypt the new Ubuntu installation for security". In
+    previous usage of Ubuntu, this resulted in halving the amount of available
+    disk space, since the encrypted files at rest were not compressed. This is
+    also an option that cannot be changed after the OS is installed.
+
+    Do not select "Use LVM with the new Ubuntu installation".
+
+    Click button "Install Now".
+
+7.  In window "Write the changes to disks?", click button "Continue".
+
+8.  In window "Where are you?", leave default option "New York" (if based in the
+    Eastern Time Zone), or other timezone if applicable to daily use.
+
+9.  In window "Who are you?", set value "Your Name" to `$YOUR_NAME`, username to
+    `$USERNAME`, and password to `$PASSWORD`. Value "Your computer's name"
+    should be left as default after all other fields are generated. Set option
+    for login to "Require my password to log in".
+
+    Click button "Continue".
