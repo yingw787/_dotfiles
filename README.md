@@ -82,12 +82,19 @@ driver updates as cheap as possible.
 
 #### System-Specific Tooling
 
--   **Version Control System**: [`git`](https://github.com/git/git)
+Aspect | Tool
+--- | ---
+Version Control System | [`git`](https://github.com/git/git)
+System Resource Monitor | [`gtop`](https://github.com/aksakalli/gtop)
+GPU-specific System Resource Monitor | [`nvtop`](https://github.com/Syllo/nvtop)
+Link Checker (to prevent [link rot](https://en.wikipedia.org/wiki/Link_rot)) | [`linkchecker`](https://github.com/filiph/linkcheck)
+Model Checker | [`Z3`](https://github.com/Z3Prover/z3) or [`TLA+`](https://github.com/tlaplus/tlaplus)
+Concolic Testing | [`angr`](https://github.com/angr/angr)
+Markdown Table of Contents Generator | [`doctoc`](https://github.com/thlorenz/doctoc)
+English Spellchecker | N/A
+[i18n (internationalization)](https://en.wikipedia.org/wiki/Internationalization_and_localization) | N/A
+Static website generator | [`hugo`](https://github.com/gohugoio/hugo)
 
--   **System Resource Monitor**: [`gtop`](https://github.com/aksakalli/gtop)
-
--   **GPU-specific System Resource Monitor**:
-    [`nvtop`](https://github.com/Syllo/nvtop)
 
 #### Language-Specific Tooling
 
@@ -104,27 +111,6 @@ Test Coverage | N/A | [`pytest-cov`](https://github.com/pytest-dev/pytest-cov) |
 Test Parallelization | N/A | [`pytest-xdist`](https://github.com/pytest-dev/pytest-xdist) | N/A | N/A | N/A | N/A | N/A
 Property-based / Generative Testing | N/A | [`hypothesis`](https://github.com/HypothesisWorks/hypothesis) | N/A | N/A | [`quickcheck`](https://hackage.haskell.org/package/QuickCheck) | N/A | N/A
 Documentation Generator | N/A | [`sphinx`](https://github.com/sphinx-doc/sphinx/) | N/A | N/A | N/A | N/A | N/A
-
-#### Miscellaneous Tooling
-
--   **Link Checker (to prevent [link
-    rot](https://en.wikipedia.org/wiki/Link_rot))**:
-    [`linkchecker`](https://github.com/filiph/linkcheck)
-
--   **Model Checker**: [`Z3`](https://github.com/Z3Prover/z3) or
-    [`TLA+`](https://github.com/tlaplus/tlaplus)
-
--   **Concolic Testing**: [`angr`](https://github.com/angr/angr)
-
--   **Markdown Table of Contents Generator**:
-    [`doctoc`](https://github.com/thlorenz/doctoc)
-
--   **English Spellchecker**: N/A
-
--   **[i18n
-    (internationalization)](https://en.wikipedia.org/wiki/Internationalization_and_localization)**: N/A
-
--   **Static website generator**: [`hugo`](https://github.com/gohugoio/hugo)
 
 ## What's Not Included
 
