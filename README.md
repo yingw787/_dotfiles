@@ -18,6 +18,13 @@ driver updates as cheap as possible.
 
 ## Overview
 
+### Requirements
+
+-   Serve as a [living document](https://en.wikipedia.org/wiki/Living_document)
+    for setup / configuration needs.
+
+-   Enable compatibility with different systems used as needed.
+
 ### Philosophy
 
 -   **Invest in things that don't change**: A quote from Jeff Bezos:
@@ -94,6 +101,10 @@ Markdown Table of Contents Generator | [`doctoc`](https://github.com/thlorenz/do
 English Spellchecker | N/A
 [i18n (internationalization)](https://en.wikipedia.org/wiki/Internationalization_and_localization) | N/A
 Static website generator | [`hugo`](https://github.com/gohugoio/hugo)
+IDE | [`vscode`](https://github.com/Microsoft/vscode)
+Text editor | [`vim`](https://github.com/vim/vim)
+Terminal multiplexer | [`tmux`](https://github.com/tmux/tmux)
+Shell | [`zsh`](https://github.com/zsh-users/zsh) or [`bash`](https://www.gnu.org/software/bash/)
 
 
 #### Language-Specific Tooling
