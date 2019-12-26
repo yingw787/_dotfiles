@@ -13,7 +13,7 @@ wget \
     --directory-prefix "$HOME/Downloads"
 
 # Untar the tarball and place within directory '/usr/local' #
-tar -C /usr/local -xzf "$HOME/Downloads/$GOLANG_DOWNLOAD_FILENAME"
+sudo tar -C /usr/local -xzf "$HOME/Downloads/$GOLANG_DOWNLOAD_FILENAME"
 
 # Set up environment variable '$PATH' #
 #
