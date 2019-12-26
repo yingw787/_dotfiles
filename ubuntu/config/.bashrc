@@ -128,6 +128,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 # details.
 PATH=$PATH:/usr/local/go/bin
 #
+# 'z' configuration: see file 'dotfiles/ubuntu/configure_z.sh' for more details.
+. $HOME/z/z.sh
+#
 # End user section (80 characters long)
 #
 # --------------------------------------------------------------------------------
