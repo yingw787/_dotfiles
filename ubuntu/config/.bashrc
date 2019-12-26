@@ -115,3 +115,19 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# --------------------------------------------------------------------------------
+#
+# Begin user section (80 characters long)
+#
+# Default env variable $PATH for deterministic path generation.
+# NOTE: Deleted paths '/usr/games' and '/usr/local/games'.
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+#
+# 'golang' configuration; see file 'dotfiles/ubuntu/configure_golang.sh' for more
+# details.
+PATH=$PATH:/usr/local/go/bin
+#
+# End user section (80 characters long)
+#
+# --------------------------------------------------------------------------------
