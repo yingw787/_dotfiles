@@ -12,6 +12,19 @@ the device drivers for the NVIDIA GPU, and conflicts between the open-source
 `nouveau` drivers (which run graphics really well) with the closed-source NVIDIA
 drivers (which expose the CUDA interface that I got the desktop for).
 
+With the switch of my laptop from a mid-2012 MacBook Pro running macOS 10.12 to
+a Lenovo ThinkPad P1 Gen 2 running Ubuntu 19.10, all of my personal machines are
+now running Ubuntu as the operating system. The P1 ships with a special Windows
+build (Windows 10 Professional for Workstations) that cannot be obtained from
+the Microsoft store, and so I opted to reduce the Windows partition size and
+maintain Windows Boot Manager during Ubuntu install. In addition, it also comes
+with an NVIDIA GPU P1000 by default, and has NVIDIA drivers available. Having
+multiple operating systems means that `grub` boots by default, and having a
+discrete GPU means possible misconfigurations. For example, setting kernel boot
+parameter `nomodeset` will cause a blank screen to show up; configuring
+`/etc/default/grub` to boot in quiet mode without having the menu means recovery
+mode is impossible to enter, which renders the partition useless.
+
 The dotfiles are intended to make setup from a vanilla base install of the
 operating system to be as simple as possible, in order to make iterating on
 driver updates as cheap as possible.
