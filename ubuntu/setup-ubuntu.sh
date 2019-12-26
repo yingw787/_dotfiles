@@ -24,5 +24,10 @@
 
 WHOAMI=$(whoami)
 
+# Add language and framework dependencies. #
 sudo -Hu $WHOAMI /usr/bin/python3.7 $(pwd)/configure_golang.py
 sudo -Hu $WHOAMI /usr/bin/python3.7 $(pwd)/configure_hugo.py
+
+# Update system configuration. #
+sudo -Hu $WHOAMI /bin/bash $(pwd)/configure_bash.sh
+sudo -Hu $WHOAMI /bin/bash $(pwd)/configure_etc_hosts.sh
