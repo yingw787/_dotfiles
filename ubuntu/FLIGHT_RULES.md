@@ -43,7 +43,7 @@ This may be an issue with `grub` precedence and preferences. Apparently, `grub`
 preferences may override BIOS / UEFI settings, such that "Windows Boot Manager"
 cannot be selected from the BIOS. Install program `grub-customizer`, and in the
 "General Settings" tab, under option "visibility", check "show menu" and "look
-for other operating systems".
+for other operating systems". Then, click button "Save" to run `update-grub`.
 
 ### `grub` keeps booting into the `grub` menu.
 
@@ -52,7 +52,7 @@ the `grub` menu by default. However, if multiple operating systems exist on the
 machine, Ubuntu will boot into the `grub` menu by default. In order to avoid
 this, install program `grub-customizer`, and in the "General Settings" tab,
 under option visibility, uncheck "show menu" and "look for other operating
-systems".
+systems". Then, click button "Save" to run `update-grub`.
 
 ## Drivers
 
