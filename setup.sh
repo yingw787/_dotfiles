@@ -2,7 +2,7 @@
 #
 # Dotfiles setup from `git@github.com:yingw787/dotfiles.git`.
 #
-# Commit ID (SHA-1): 'e3d7afb15d74774a425f49ee9531d6548ae096fb'
+# Commit ID (SHA-1): '5dfe55c1a61eaa7377768e4d628726c28b1c3362'
 #
 # This script is intended to be hosted at https://dotfiles.yingw787.com for
 # configuring Ying's personal development setup.
