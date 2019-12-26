@@ -78,7 +78,9 @@ quit_or_continue() {
         case $yn in
             [Yy]* ) echo "$LOG_PREFIX Continuing setup."; break;;
             [Nn]* ) echo "$LOG_PREFIX Exiting."; exit;;
-            * ) echo "$LOG_PREFIX Please answer using [y/Y] or [n/N]. Continue to '$install_script'? [Y/n]"; exit;;
+            # If script is pipelined, then this is a good opportunity to halt
+            # execution in order to change contexts if necessary.
+            * ) echo "$LOG_PREFIX Exiting."; exit;;
         esac
     done
 }
