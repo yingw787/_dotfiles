@@ -2,7 +2,7 @@
 #
 # Dotfiles setup from `git@github.com:yingw787/dotfiles.git`.
 #
-# Commit ID (SHA-1): 'cdd5ad26e61f4eb984ef887cb22d9cf748093611'
+# Commit ID (SHA-1): 'e3d7afb15d74774a425f49ee9531d6548ae096fb'
 #
 # This script is intended to be hosted at https://dotfiles.yingw787.com for
 # configuring Ying's personal development setup.
@@ -44,8 +44,8 @@ fi
 # key registration.
 repository="https://github.com/yingw787/dotfiles"
 # Installing at directory $(pwd) to use context of the current directory,
-# instead of $HOME, since that changes with the user context (e.g. whether user
-# is run as 'sudo').
+# instead of $HOME. Using `sudo -Hu $(whoami)` keeps context of home directory,
+# but this is likely too much configuration necessary for the setup.sh file.
 destination="$(pwd)/dotfiles"
 
 echo "$LOG_PREFIX Cloning dotfiles repository $REPOSITORY to directory $destination."
@@ -70,21 +70,6 @@ echo "$LOG_PREFIX Location of dotfiles remote repository is: '$repository'"
 echo "$LOG_PREFIX Location of dotfiles local repository is: '$destination'"
 
 install_script="$destination/ubuntu/setup-ubuntu.sh"
+WHOAMI="$(whoami)"
 
-# Manually checkpoint execution to exit or continue.
-quit_or_continue() {
-    while true; do
-        read -p "$LOG_PREFIX Initial setup completed. Continue to '$install_script'? [Y/n] " yn
-        case $yn in
-            [Yy]* ) echo "$LOG_PREFIX Continuing setup."; break;;
-            [Nn]* ) echo "$LOG_PREFIX Exiting."; exit;;
-            # If script is pipelined, then this is a good opportunity to halt
-            # execution in order to change contexts if necessary.
-            * ) echo "$LOG_PREFIX Exiting."; exit;;
-        esac
-    done
-}
-quit_or_continue
-
-# Execute Ubuntu install #
-bash $install_script
+echo "$LOG_PREFIX Initial setup completed. Execute command 'sudo -Hu $WHOAMI $install_script' to complete dotfiles setup."
