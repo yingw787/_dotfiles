@@ -2,15 +2,7 @@
 #
 # Configures the user 'golang' setup.
 #
-# Version: v1.13.5
-#
-# Usage:
-#
-# - 'sudo -Hu $(whoami) ./configure_golang.py'
-
-# Using system 'python3.7' because a general-purpose language has more robust /
-# defined behavior than what 'bash' can provide, and Ubuntu 19.10 ships with
-# 'python3.7'.
+# Golang Version: v1.13.5
 
 import os
 import requests
@@ -36,12 +28,13 @@ if (
 else:
     download_file(TARBALL_URI, DOWNLOADS)
 
-# # Untar the tarball and place within directory '/usr/local' #
-# echo "$LOG_PREFIX Install tarball."
+# Untar the tarball and place within directory '/usr/local' #
+print(f'{LOG_PREFIX} Install tarball.')
+
 # sudo tar -C /usr/local -xzf "$HOME/Downloads/$TARBALL_FILENAME"
 
-# # Set up environment variable '$PATH' #
-# #
-# # Done as part of copying over file 'dotfiles/ubuntu/config/.bashrc' to location
-# # '$HOME/.bashrc'. See files './configure_bash.sh' and './setup-ubuntu.sh' for
-# # more details.
+# Set up environment variable '$PATH' #
+#
+# Done as part of copying over file 'dotfiles/ubuntu/config/.bashrc' to location
+# '$HOME/.bashrc'. See files './configure_bash.sh' and './setup-ubuntu.sh' for
+# more details.
