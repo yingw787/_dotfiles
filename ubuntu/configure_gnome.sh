@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 # Configure GNOME desktop environment.
+#
+# (TODO: Create a helper method to check whether a ppa is already installed.)
 
 # Install papirus-icon-theme (NOT VERSIONED) #
 add-apt-repository ppa:papirus/papirus
@@ -12,7 +14,8 @@ add-apt-repository ppa:tista/adapta
 apt-get update
 apt-get install adapta-gtk-theme
 
-# These steps must be done manually.
+# These steps must be done manually (TODO: Find a way to automatically execute
+# these steps):
 #
 # - Install and open `gnome-tweaks`.
 # - In window "Appearance", make the following selections:
