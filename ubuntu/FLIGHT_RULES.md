@@ -57,6 +57,29 @@ Now, `nvidia-smi` should return the console.
 NOTE: NVIDIA drivers cause flicker upon boot. Run only when CUDA is necessary
 and switch back to `intel` otherwise.
 
+### Microphone does not work, even though device is recognized
+
+According to [the Lenovo ThinkPad P1 Gen 2
+specifications](https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_P1_2nd_Gen/ThinkPad_P1_2nd_Gen_Spec.PDF),
+the laptop has built-in Dolby Audio Premium microphone/speaker combination.
+According to [this Stack Overflow answer](https://askubuntu.com/a/984118), Dolby
+drivers do not exist for Ubuntu:
+
+> > Windows 10 PC Support Notice:
+> >
+> > This application is designed specifically for PC Manufacturers and comes
+> > pre-installed on licensed devices. It will not function properly on
+> > unlicensed devices.
+
+> Dolby Audio is a proprietary technology, and is something featured with
+> specific hardware in a system. The only way to enable Dolby features on such
+> hardware is with proprietary drivers, which as of yet, do not appear to have
+> been released for Linux.
+
+In order to use a microphone on Ubuntu Linux, buy an external microphone.
+Otherwise, boot into the separate Windows partition using the Windows Boot
+Manager.
+
 ## Miscallaneous
 
 ### I want to download a playlist from YouTube with highest quality video/audio
