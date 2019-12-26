@@ -8,9 +8,18 @@
 # configuring Ying's personal development setup.
 #
 # Assumptions:
-# - Using Ubuntu Desktop 19.10 64-bit build
+# - Using Ubuntu Desktop 19.10.0 64-bit build
 # - Internet is reachable
 # - User has `sudo` privileges (e.g. is root)
+#
+# Arguments:
+# - '--home=' (required): Substitution for environment variable $HOME. This
+#   varies based on user and whether user is running in 'sudo' context.
+#
+# Example prompts:
+#
+# ./setup.sh --home=$HOME
+# bash $(pwd)/setup.sh --home=$HOME
 
 LOG_PREFIX="[https://dotfiles.yingw787.com]"
 
@@ -67,11 +76,11 @@ install_script="$destination/ubuntu/setup-ubuntu.sh"
 # Manually checkpoint execution to exit or continue.
 quit_or_continue() {
     while true; do
-        read -p "Initial setup completed. Continue to '$install_script'? [Y/n] " yn
+        read -p "$LOG_PREFIX Initial setup completed. Continue to '$install_script'? [Y/n] " yn
         case $yn in
-            [Yy]* ) echo "Continuing setup."; break;;
-            [Nn]* ) echo "Exiting."; exit;;
-            * ) echo "Please answer yes or no.";;
+            [Yy]* ) echo "$LOG_PREFIX Continuing setup."; break;;
+            [Nn]* ) echo "$LOG_PREFIX Exiting."; exit;;
+            * ) echo "$LOG_PREFIX Please answer using [y/Y] or [n/N]. Continue to '$install_script'? [Y/n]"; exit;;
         esac
     done
 }
