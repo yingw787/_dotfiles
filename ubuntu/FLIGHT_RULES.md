@@ -37,6 +37,23 @@ details.
 NOTE: CUDA is not available in this mode. Switch to NVIDIA drivers using `sudo
 prime-select nvidia` when CUDA is needed.
 
+### BIOS does not boot "Windows Boot Manager" properly.
+
+This may be an issue with `grub` precedence and preferences. Apparently, `grub`
+preferences may override BIOS / UEFI settings, such that "Windows Boot Manager"
+cannot be selected from the BIOS. Install program `grub-customizer`, and in the
+"General Settings" tab, under option "visibility", check "show menu" and "look
+for other operating systems".
+
+### `grub` keeps booting into the `grub` menu.
+
+If Ubuntu is the only operating system on the machine, Ubuntu will not boot into
+the `grub` menu by default. However, if multiple operating systems exist on the
+machine, Ubuntu will boot into the `grub` menu by default. In order to avoid
+this, install program `grub-customizer`, and in the "General Settings" tab,
+under option visibility, uncheck "show menu" and "look for other operating
+systems".
+
 ## Drivers
 
 ### `nvidia-smi` is not referenceable, even though drivers are installed.
