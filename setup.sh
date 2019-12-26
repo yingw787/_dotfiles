@@ -12,14 +12,9 @@
 # - Internet is reachable
 # - User has `sudo` privileges (e.g. is root)
 #
-# Arguments:
-# - '--home=' (required): Substitution for environment variable $HOME. This
-#   varies based on user and whether user is running in 'sudo' context.
-#
-# Example prompts:
-#
-# ./setup.sh --home=$HOME
-# bash $(pwd)/setup.sh --home=$HOME
+# Usage:
+# - cat setup.sh | bash (for basic setup)
+# - bash setup.sh
 
 LOG_PREFIX="[https://dotfiles.yingw787.com]"
 
@@ -48,7 +43,10 @@ fi
 # Use `git remote set-url $REMOTE_NAME` in order to change HTTPS to SSH after
 # key registration.
 repository="https://github.com/yingw787/dotfiles"
-destination="$HOME/dotfiles"
+# Installing at directory $(pwd) to use context of the current directory,
+# instead of $HOME, since that changes with the user context (e.g. whether user
+# is run as 'sudo').
+destination="$(pwd)/dotfiles"
 
 echo "$LOG_PREFIX Cloning dotfiles repository $REPOSITORY to directory $destination."
 if ! [ -d $destination ];
@@ -60,14 +58,14 @@ fi
 
 # Log metadata about:
 # - `git` version
-# - Environment variable $HOME
+# - Environment variable $(pwd)
 # - Location of `dotfiles` remote repository
 # - Location of `dotfiles` local repository
 GIT_VERSION=$(git --version)
 
 echo "$LOG_PREFIX 'git' installed."
 echo "$LOG_PREFIX 'git' install version: '$GIT_VERSION'"
-echo "$LOG_PREFIX env variable '\$HOME' is: '$HOME'"
+echo "$LOG_PREFIX env variable '\$(pwd)' is: '$(pwd)'"
 echo "$LOG_PREFIX Location of dotfiles remote repository is: '$repository'"
 echo "$LOG_PREFIX Location of dotfiles local repository is: '$destination'"
 
