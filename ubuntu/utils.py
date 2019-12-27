@@ -41,3 +41,28 @@ def download_file(uri, filename_abspath):
         uri
     ]
     subprocess.call(bash_command, shell=True)
+
+
+def install_tarball(install_directory, filename_abspath):
+    """Installs a tarball.
+
+    NOTE: Uses 'sudo', ensure that no pipelining takes place to enable user to
+    add credentials.
+
+    Usage:
+
+    ```bash
+    sudo tar \
+        -C $install_directory \
+        -xzf $filename_abspath
+    ```
+    """
+    bash_command = [
+        'sudo',
+        'tar',
+        '-C',
+        install_directory,
+        '-xzf',
+        filename_abspath
+    ]
+    subprocess.call(bash_command, shell=True)
