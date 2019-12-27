@@ -131,6 +131,9 @@ export PATH=$PATH:/usr/local/go/bin
 # 'z' configuration: see file 'dotfiles/ubuntu/configure_z.sh' for more details.
 . $HOME/src/z/z.sh
 #
+# Ensure that Python does not write bytecode.
+export PYTHONDONTWRITEBYTECODE=1
+#
 # End user section (80 characters long)
 #
 # --------------------------------------------------------------------------------
