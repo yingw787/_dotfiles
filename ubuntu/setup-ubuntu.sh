@@ -48,6 +48,8 @@ sudo -Hu $(whoami) /bin/bash $(pwd)/configure_bash.sh
 echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/configure_etc_hosts.sh'."
 sudo -Hu $(whoami) /bin/bash $(pwd)/configure_etc_hosts.sh
 
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/add_misc.sh'."
+sudo -Hu $(whoami) /bin/bash $(pwd)/add_misc.sh
 
 # Download projects #
 
