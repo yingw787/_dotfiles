@@ -6,30 +6,56 @@
 #
 # Hugo Dependencies: 'golang' (see file '$(pwd)/configure_golang.sh' for more
 # details).
+#
+# Usage:
+# - 'sudo -Hu $(whoami) /usr/bin/python3.7 -B configure_hugo.py'
 
 import os
+import subprocess
 
+import utils
+
+
+LOG_PREFIX = '[https://dotfiles.yingw787.com]'
+
+HOME = os.environ['HOME']
+DOWNLOADS = os.path.join(HOME, 'Downloads')
 
 TARBALL_FILENAME = 'hugo_0.62.0_Linux-64bit.tar.gz'
-TARBALL_URI = os.path.join('https://github.com/gohugo.io/releases/download/v0.62.0', TARBALL_FILENAME)
+TARBALL_URI = os.path.join(
+    'https://github.com/gohugoio/hugo/releases/download/v0.62.0/',
+    TARBALL_FILENAME
+)
 
-DEB_FILENAME = 'hugo_0.62.0_Linux-64bit.deb'
-DEB_CHECKSUM="79e4594a891bf5b04997b175d549da6f3e3f913cd19c69fef7c289e50c63867c"
+LOCAL_DOWNLOAD = os.path.join(
+    DOWNLOADS,
+    TARBALL_FILENAME
+)
+TAR_CHECKSUM='1c3f999320ae30f9b648f6f72305b126be7fd4bab9cb7edf74253c0cbe892c87'
 
-# If absolute file path exists and checksum do not match #
-if [ $(sha256sum "$HOME/Downloads/$HUGO_DOWNLOAD_DEB") != "$HUGO_DOWNLOAD_CHECKSUM $HOME/Downloads/$HUGO_DOWNLOAD_DEB" ];
-then
-    # Download and untar hugo tarball #
-    wget \
-        $HUGO_DOWNLOAD_LINK \
-        --directory-prefix "$HOME/Downloads"
-    tar -C "$HOME/Downloads" -xzf "$HOME/Downloads/$HUGO_DOWNLOAD_FILENAME"
-else
-    # Skip download step #
-fi
+print(f'{LOG_PREFIX} Downloading \'{TARBALL_URI}\' to \'{LOCAL_DOWNLOAD}\'.')
 
-# Set up environment variable '$PATH' #
-#
-# Since install location is part of default $PATH, no action needs to be done.
+# If absolute file path exists and checksum do not match, download file #
+if (
+    os.path.exists(LOCAL_DOWNLOAD) and
+    TAR_CHECKSUM == utils.generate_sha256sum_of_file(LOCAL_DOWNLOAD)
+):
+    print(f'{LOG_PREFIX} .deb file downloaded and validated. Skip download.')
+else:
+    utils.download_file(
+        TARBALL_URI,
+        LOCAL_DOWNLOAD
+    )
 
-# Delete tarball and untar directory #
+# Untar the tarball and place within directory '/usr/local' #
+print(f'{LOG_PREFIX} Install tarball.')
+utils.install_tarball(
+    '/usr/local/bin',
+    os.path.join(DOWNLOADS, TARBALL_FILENAME)
+)
+
+# Since install location is part of default $PATH, no action needs to be done in
+# order to register 'hugo' with shell environment.
+
+# Delete tarball #
+os.remove(LOCAL_DOWNLOAD)
