@@ -3,6 +3,9 @@
 # Configure bash shell.
 #
 # Bash Version: UNVERSIONED
+#
+# Usage:
+# - '/bin/bash $HOME/dotfiles/ubuntu/configure_bash.sh'
 
 LOG_PREFIX="[https://dotfiles.yingw787.com]"
 
