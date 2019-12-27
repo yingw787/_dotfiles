@@ -40,7 +40,7 @@ def download_file(uri, filename_abspath):
         filename_abspath,
         uri
     ]
-    subprocess.call(bash_command, shell=True)
+    subprocess.call(' '.join(bash_command), shell=True)
 
 
 def install_tarball(install_directory, filename_abspath):
@@ -65,4 +65,4 @@ def install_tarball(install_directory, filename_abspath):
         '-xzf',
         filename_abspath
     ]
-    subprocess.call(bash_command, shell=True)
+    subprocess.call(' '.join(bash_command), shell=True)
