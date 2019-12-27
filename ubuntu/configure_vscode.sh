@@ -12,11 +12,11 @@ DEB_NAME="code.v1.41.1.deb"
 DEB_URI="https://update.code.visualstudio.com/1.41.1/linux-deb-x64/stable"
 DOWNLOADS="$HOME/Downloads"
 
-echo "$LOG_PREFIX Downloading 'code' from '$DEB_URI' to '$DOWNLOADS' as $DEB_NAME'."
-wget \
-    $DEB_URI
-    --directory-prefix $DOWNLOADS
-    --output-document $DEB_NAME
+echo "$LOG_PREFIX Downloading 'code' from '$DEB_URI' to '$DOWNLOADS' as '$DEB_NAME'."
+# NOTE: For command 'wget', options -P/--directory-prefix and
+# -O/--output-document are mutually exclusive. If a absolute path is desired,
+# use '-O' and specify the absolute file path.
+wget -O "$DOWNLOADS/$DEB_NAME" $DEB_URI
 
 echo "$LOG_PREFIX Installing '$DOWNLOADS/$DEB_NAME' using 'dpkg'."
 sudo dpkg -i "$DOWNLOADS/$DEB_NAME"
