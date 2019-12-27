@@ -24,20 +24,29 @@
 
 LOG_PREFIX="[https://dotfiles.yingw787.com]"
 
-WHOAMI=$(whoami)
 
 # Add language and framework dependencies. #
+
 echo "$LOG_PREFIX Run cmd '/bin/bash $(pwd)/add_z.sh'."
 /bin/bash $(pwd)/add_z.sh
 
-# sudo -Hu $WHOAMI /usr/bin/python3.7 $(pwd)/configure_golang.py
-# sudo -Hu $WHOAMI /usr/bin/python3.7 $(pwd)/configure_hugo.py
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_golang.py'."
+# sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_golang.py
+
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_hugo.py'."
+# sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_hugo.py
+
 
 # Update system configuration. #
-echo "$LOG_PREFIX Run cmd 'sudo -Hu $WHOAMI /bin/bash $(pwd)/configure_bash.sh'."
-sudo -Hu $WHOAMI /bin/bash $(pwd)/configure_bash.sh
-# sudo -Hu $WHOAMI /bin/bash $(pwd)/configure_etc_hosts.sh
+
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/configure_bash.sh'."
+sudo -Hu $(whoami) /bin/bash $(pwd)/configure_bash.sh
+
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/configure_etc_hosts.sh'."
+sudo -Hu $(whoami) /bin/bash $(pwd)/configure_etc_hosts.sh
+
 
 # Download projects #
+
 echo "$LOG_PREFIX Run cmd '/bin/bash $(pwd)/../projects/download_git_projects.sh'."
 /bin/bash $(pwd)/../projects/download_git_projects.sh
