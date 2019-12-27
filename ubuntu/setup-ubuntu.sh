@@ -45,6 +45,9 @@ sudo -Hu $(whoami) /bin/bash $(pwd)/add_misc.sh
 echo "$LOG_PREFIX Run cmd '/bin/bash $(pwd)/add_z.sh'."
 /bin/bash $(pwd)/add_z.sh
 
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/configure_vscode.sh'."
+sudo -Hu $(whoami) /bin/bash $(pwd)/configure_vscode.sh
+
 
 # Add language/framework-specific tooling. #
 
