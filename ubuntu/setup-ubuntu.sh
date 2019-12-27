@@ -28,19 +28,7 @@
 LOG_PREFIX="[https://dotfiles.yingw787.com]"
 
 
-# Add language and framework dependencies. #
-
-echo "$LOG_PREFIX Run cmd '/bin/bash $(pwd)/add_z.sh'."
-/bin/bash $(pwd)/add_z.sh
-
-echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_golang.py'."
-# sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_golang.py
-
-echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_hugo.py'."
-# sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_hugo.py
-
-
-# Update system configuration. #
+# Update system-specific tooling. #
 
 echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/configure_bash.sh'."
 sudo -Hu $(whoami) /bin/bash $(pwd)/configure_bash.sh
@@ -50,6 +38,19 @@ sudo -Hu $(whoami) /bin/bash $(pwd)/configure_etc_hosts.sh
 
 echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/add_misc.sh'."
 sudo -Hu $(whoami) /bin/bash $(pwd)/add_misc.sh
+
+echo "$LOG_PREFIX Run cmd '/bin/bash $(pwd)/add_z.sh'."
+/bin/bash $(pwd)/add_z.sh
+
+
+# Add language/framework-specific tooling. #
+
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_golang.py'."
+# sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_golang.py
+
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_hugo.py'."
+# sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_hugo.py
+
 
 # Download projects #
 
