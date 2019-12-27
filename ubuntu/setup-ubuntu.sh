@@ -52,7 +52,7 @@ sudo -Hu $(whoami) /bin/bash $(pwd)/configure_vscode.sh
 # Add language/framework-specific tooling. #
 
 echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_golang.py'."
-# sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_golang.py
+sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_golang.py
 
 echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_hugo.py'."
 # sudo -Hu $(whoami) /usr/bin/python3.7 $(pwd)/configure_hugo.py
