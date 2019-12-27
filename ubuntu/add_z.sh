@@ -2,9 +2,17 @@
 #
 # Add https://github.com/rupa/z for directory traversal.
 #
-# Check whether .bashrc or .zshrc is updated with executing /path/to/z.sh as per
-# z installation instructions.
+# Check whether .bashrc or .zshrc is updated with executing /path/to/z.sh3
+#
+# Usage:
+# - '/bin/bash $HOME/dotfiles/ubuntu/add_z.sh'
 
-GITHUB_REPO="https://github.com/rupa/z"
+LOG_PREFIX="[https://dotfiles.yingw787.com]"
 
-git clone $GITHUB_REPO $HOME
+Z="https://github.com/rupa/z"
+
+mkdir -p $HOME/src
+pushd $HOME/src
+    echo "$LOG_PREFIX cloning '$Z'."
+    git clone $Z
+popd
