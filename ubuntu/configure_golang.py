@@ -5,7 +5,7 @@
 # Golang Version: v1.13.5
 #
 # To run:
-# 'sudo -Hu $(whoami) /usr/bin/python3.7 configure_golang.py'
+# 'sudo -Hu $(whoami) /usr/bin/python3.7 -B configure_golang.py'
 
 import os
 
@@ -35,12 +35,17 @@ if (
 ):
     print(f'{LOG_PREFIX} Tarball downloaded and validated. Skip download.')
 else:
-    utils.download_file(TARBALL_URI, DOWNLOADS)
+    utils.download_file(
+        TARBALL_URI,
+        os.path.join(DOWNLOADS, TARBALL_FILENAME)
+    )
 
 # Untar the tarball and place within directory '/usr/local' #
 print(f'{LOG_PREFIX} Install tarball.')
-
-# sudo tar -C /usr/local -xzf "$HOME/Downloads/$TARBALL_FILENAME"
+utils.install_tarball(
+    '/usr/local',
+    os.path.join(DOWNLOADS, TARBALL_FILENAME)
+)
 
 # Set up environment variable '$PATH' #
 #
