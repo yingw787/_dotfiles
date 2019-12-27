@@ -25,3 +25,19 @@ def generate_sha256sum_of_file(filename_abspath):
     checksum = output.split(' ')[0]
 
     return checksum
+
+
+def download_file(uri, filename_abspath):
+    """Downloads file from a URI to an absolute file path on local.
+
+    Args:
+        uri (str): HTTPS only.
+        filename_abspath (str)
+    """
+    bash_command = [
+        'wget',
+        '-O',
+        filename_abspath,
+        uri
+    ]
+    subprocess.call(bash_command, shell=True)
