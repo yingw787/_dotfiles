@@ -21,6 +21,9 @@
 #
 # NOTE: All scripts should be run as 'sudo -Hu $(whoami) ./script' in order to
 # leave environment variables dependent on user context (e.g. $HOME) untouched.
+#
+# Usage:
+# - 'sudo -Hu $(whoami) /bin/bash setup-ubuntu.sh | tee log.txt'
 
 LOG_PREFIX="[https://dotfiles.yingw787.com]"
 
