@@ -49,4 +49,9 @@ pushd $HOME/src
     TINYDEVCRM_COMINGSOON="git@github.com:yingw787/tinydevcrm-comingsoon.git"
     echo "$LOG_PREFIX cloning '$TINYDEVCRM_COMINGSOON'."
     git clone $TINYDEVCRM_COMINGSOON
+
+    # The Haskell Book #
+    THE_HASKELL_BOOK="git@github.com:yingw787/thehaskellbook.git"
+    echo "$LOG_PREFIX cloning '$THE_HASKELL_BOOK'."
+    git clone $THE_HASKELL_BOOK
 popd
