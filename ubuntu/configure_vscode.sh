@@ -10,6 +10,7 @@
 # - 'haskell': Haskell syntax highlighting
 # - 'markdownlint': Markdown linting and style checking
 # - 'gitlens': View 'git' histories
+# - 'pylint': Python linter
 #
 # Usage:
 # - 'sudo -Hu $(whoami) /bin/bash configure_vscode.sh'
