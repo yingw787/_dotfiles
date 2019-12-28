@@ -30,6 +30,9 @@ LOG_PREFIX="[https://dotfiles.yingw787.com]"
 
 # Update system-specific tooling. #
 
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/configure_ssh.sh'."
+sudo -Hu $(whoami) /bin/bash $(pwd)/configure_ssh.sh
+
 echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/configure_vim.sh'."
 sudo -Hu $(whoami) /bin/bash $(pwd)/configure_vim.sh
 
