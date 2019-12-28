@@ -2,6 +2,15 @@
 #
 # Configure Microsoft Visual Studio Code.
 #
+# NOTE: VS Code Extensions are not available in any JSON form. The full list of
+# extensions includes:
+# - 'rewrap': Hard wrap text using newline insertion
+# - 'todotree': Visualize TODO statements in sidebar
+# - 'python': VS Code Python extension
+# - 'haskell': Haskell syntax highlighting
+# - 'markdownlint': Markdown linting and style checking
+# - 'gitlens': View 'git' histories
+#
 # Usage:
 # - 'sudo -Hu $(whoami) /bin/bash configure_vscode.sh'
 
@@ -26,3 +35,4 @@ mkdir -p $HOME/.config/Code/Users
 cp $(pwd)/config/vscode_settings.json $HOME/.config/Code/Users/settings.json
 
 echo "$LOG_PREFIX 'code' updated. Run 'Developer: Reload Window' or Ctrl + R to reload settings."
+echo "$LOG_PREFIX see '$(pwd)/configure_vscode.sh' to see list of extensions."
