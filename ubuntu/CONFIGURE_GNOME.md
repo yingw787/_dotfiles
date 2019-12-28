@@ -53,31 +53,37 @@ Night shift should be configured and visible.
 By default, the menu bar exists at the left edge of the screen. macOS has its
 menu bar in the middle of the screen, configurable to hide when not needed.
 
-1.  Install `google-chrome-stable`. This is necessary in order to use the Google
-    Chrome extension "GNOME Extensions", which are a safer way to install GNOME
-    extensions than downloading packages.
+1.  Clone the repository and run `make install`:
 
     ```bash
-    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-    echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-    sudo apt-get update
-    sudo apt-get install google-chrome-stable
+    cd $HOME/src
+    pushd $HOME/src
+        git clone https://github.com/micheleg/dash-to-dock.git
+        cd dash-to-dock
+        make && make install
+    popd
     ```
 
-2.  Open application `google-chrome-stable`. Open URI
-    https://extensions.gnome.org/extension/307/dash-to-dock/.
-
-3.  Follow the instructions to install "GNOME Shell Extension" to Google Chrome:
-    https://chrome.google.com/webstore/detail/gnome-shell-integration
-
-4.  Install the native GNOME Chrome connector:
+    If you get the error `make: msgfmt: Command not found`, install `gettext`:
 
     ```bash
-    sudo apt-get install chrome-gnome-shell
+    sudo apt-get install gettext
     ```
 
-5.  Open https://extensions.gnome.org/extension/307/dash-to-dock/. Enable the
-    extension and press "Yes" when prompted to confirm download.
+2.  Reboot GNOME shell using 'Alt + F2; r + Enter', or reboot the entire
+    computer:
+
+    ```bash
+    sudo reboot
+    ```
+
+"GNOME Dash-to-Dock" should be installed properly.
+
+3.  In application "Settings", in menu "Dock", select the following options:
+
+    - "Auto-hide the Dock" : "enable"
+    - "Icon Size" : "64" (or largest)
+    - "Position on screen" : "Bottom"
 
 ## Date and Time
 
