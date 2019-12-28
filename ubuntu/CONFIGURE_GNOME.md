@@ -1,46 +1,38 @@
-#!/bin/bash
-#
-# Configure GNOME desktop environment.
-#
-# (TODO: Create a helper method to check whether a ppa is already installed.)
+# GNOME configuration
 
-# Install papirus-icon-theme (NOT VERSIONED) #
-add-apt-repository ppa:papirus/papirus
-apt-get update
-apt-get install papirus-icon-theme
+## Theming
 
-# Install adapta-gtk-theme (NOT VERSIONED) #
-add-apt-repository ppa:tista/adapta
-apt-get update
-apt-get install adapta-gtk-theme
+### Install `papirus-icon-theme` and `adapta-gtk-theme`
 
-# These steps must be done manually (TODO: Find a way to automatically execute
-# these steps):
-#
-# - Install and open `gnome-tweaks`.
-# - In window "Appearance", make the following selections:
-# - "Themes/Applications" : "Adapta"
-# - "Themes/Cursor" : "DMZ-Black"
-# - "Themes/Icons" : "Papirus"
-# - "Themes/Shell" : "N/A"
-# - "Themes/Sound" : "Yaru"
+1. In application "Terminal", install `papirus-icon-theme` and `adapta-gtk-theme`:
 
-# Install GNOME Dash-to-Dock extension (dependency: GNOME Shell v3.34.1) #
-$GNOME_ZIPFILE='12397.shell-extension.zip'
-wget \
-    "https://extensions.gnome.org/review/download/$GNOME_ZIPFILE" \
-    --directory-prefix "$HOME/Downloads"
+```bash
+sudo add-apt-repository ppa:papirus/papirus
+sudo add-apt-repository ppa:tista/adapta
+sudo apt-get update
+sudo apt-get install -y papirus-icon-theme adapta-gtk-theme
+```
 
-$DASH_TO_DOCK_DIRNAME='dash-to-dock@micxgx.gmail.com'
-$DASH_TO_DOCK_TMP_ABSPATH="$HOME/Downloads/$DASH_TO_DOCK_DIRNAME"
+2. Install `gnome-tweaks`:
 
-mkdir $DASH_TO_DOCK_TMP_ABSPATH
-unzip "$HOME/Downloads/$GNOME_ZIPFILE" -d $DASH_TO_DOCK_TMP_ABSPATH
+```bash
+sudo apt-get install gnome-tweaks
+```
 
-$GNOME_SHELL_EXTENSIONS="$HOME/.local/share/gnome-shell/extensions"
-if ! [ -d $GNOME_SHELL_EXTENSIONS ];
-then
-    mkdir -p $GNOME_SHELL_EXTENSIONS
-fi
+3. Open `gnome-tweaks`. In window "Appearance", make the following selections:
 
-mv $DASH_TO_DOCK_TMP_ABSPATH "$GNOME_SHELL_EXTENSIONS/$DASH_TO_DOCK_DIRNAME"
+- "Themes/Applications" : "Adapta"
+- "Themes/Cursor" : "DMZ-Black"
+- "Themes/Icons" : "Papirus"
+- "Themes/Shell" : "N/A"
+- "Themes/Sound" : "Yaru"
+
+The theme should be configured properly.
+
+## Date and Time
+
+### Set time format from 24h to AM/PM
+
+1. In application "Settings", open menu "Date and Time".
+
+2. For option "Time Format", change value from "24-hour" to "AM/PM".
