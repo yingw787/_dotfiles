@@ -8,7 +8,10 @@
 
 ```bash
 sudo add-apt-repository ppa:papirus/papirus
-sudo add-apt-repository ppa:tista/adapta
+# The Adapta PPA may be folded into the general package archive for Ubuntu
+# 19.10; the PPA does not have sources for this release.
+#
+# sudo add-apt-repository ppa:tista/adapta
 sudo apt-get update
 sudo apt-get install -y papirus-icon-theme adapta-gtk-theme
 ```
@@ -44,6 +47,37 @@ The theme should be configured properly.
 - "Color Temperature" : "50%" (middle)
 
 Night shift should be configured and visible.
+
+### Move menu bar from left edge to middle of bottom screen
+
+By default, the menu bar exists at the left edge of the screen. macOS has its
+menu bar in the middle of the screen, configurable to hide when not needed.
+
+1.  Install `google-chrome-stable`. This is necessary in order to use the Google
+    Chrome extension "GNOME Extensions", which are a safer way to install GNOME
+    extensions than downloading packages.
+
+    ```bash
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+    echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+    sudo apt-get update
+    sudo apt-get install google-chrome-stable
+    ```
+
+2.  Open application `google-chrome-stable`. Open URI
+    https://extensions.gnome.org/extension/307/dash-to-dock/.
+
+3.  Follow the instructions to install "GNOME Shell Extension" to Google Chrome:
+    https://chrome.google.com/webstore/detail/gnome-shell-integration
+
+4.  Install the native GNOME Chrome connector:
+
+    ```bash
+    sudo apt-get install chrome-gnome-shell
+    ```
+
+5.  Open https://extensions.gnome.org/extension/307/dash-to-dock/. Enable the
+    extension and press "Yes" when prompted to confirm download.
 
 ## Date and Time
 
