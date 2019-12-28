@@ -66,6 +66,8 @@ sudo -Hu $(whoami) /usr/bin/python3.7 -B $(pwd)/configure_hugo.py
 echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 -B $(pwd)/configure_python.py'."
 sudo -Hu $(whoami) /usr/bin/python3.7 -B $(pwd)/configure_python.py
 
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 -B $(pwd)/configure_haskell.py'."
+sudo -Hu $(whoami) /usr/bin/python3.7 -B $(pwd)/configure_haskell.py
 
 # Download projects #
 
