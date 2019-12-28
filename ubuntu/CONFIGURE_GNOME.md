@@ -1,6 +1,6 @@
 # GNOME configuration
 
-## Theming
+## Appearance
 
 ### Install `papirus-icon-theme` and `adapta-gtk-theme`
 
@@ -29,6 +29,22 @@ sudo apt-get install gnome-tweaks
 
 The theme should be configured properly.
 
+### Configure Night Shift
+
+1. In application "Settings", choose menu "Displays".
+
+2. In the header of the application window, there should be menu "Night Light"
+   in addition to menu "Displays". Open it.
+
+3. In menu "Night Light", set the following options:
+
+- "Night Light" : "Enabled"
+- "Schedule" : "Manual Schedule"
+- "Times" : "2:00 AM - 1:59 AM"
+- "Color Temperature" : "50%" (middle)
+
+Night shift should be configured and visible.
+
 ## Date and Time
 
 ### Set time format from 24h to AM/PM
@@ -36,3 +52,5 @@ The theme should be configured properly.
 1. In application "Settings", open menu "Date and Time".
 
 2. For option "Time Format", change value from "24-hour" to "AM/PM".
+
+The time should now appear as AM/PM instead of 24-hour time.
