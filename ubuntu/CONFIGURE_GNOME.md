@@ -110,3 +110,54 @@ effects.
 2. For option "Time Format", change value from "24-hour" to "AM/PM".
 
 The time should now appear as AM/PM instead of 24-hour time.
+
+## AppImages
+
+[AppImages](https://appimage.org/) are a way to distribute hermetic Linux
+applications (e.g. do not depend on package lists). Because they are simple, I
+don't think I need a script in order to manage them.
+
+### Install Standard Notes
+
+1.  Download distribution from [this
+    webpage](https://standardnotes.org/extensions?downloaded=linux).
+
+2.  Move .AppImage to `~/Desktop` and make it executable:
+
+    ```bash
+    chmod +x $HOME/Desktop/Standard-Notes-3.0.24.AppImage
+    . $HOME/Desktop/Standard-Notes-3.0.24.AppImage
+    ```
+
+Standard Notes should now open correctly.
+
+It turns out that .AppImage files cannot be pinned to the Dock by default. In
+order to pin to Dock:
+
+1.  Create a `.desktop` file in `~/.local/share/applications`:
+
+```bash
+touch $HOME/.local/share/applications/standardnotes.desktop
+```
+
+2.  Open the file with `vim`, and add the following lines:
+
+```text
+NAME=Standard Notes
+Exec=. /home/yingw787/Desktop/Standard-Notes-3.0.24.AppImage
+Comment=Launch Standard Notes
+Terminal=false
+Type=Application
+Icon=standardnotes.png
+```
+
+3.  Save the file.
+
+4.  Download the "Standard Notes" icon from
+    http://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/standard-notes-icon.png.
+
+5.  Move the "Standard Notes" icon to `$HOME/.icons`:
+
+```bash
+mv $HOME/Downloads/standardnotes.png $HOME/.icons
+```
