@@ -69,7 +69,13 @@ sudo -Hu $(whoami) /usr/bin/python3.7 -B $(pwd)/configure_python.py
 echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /usr/bin/python3.7 -B $(pwd)/configure_haskell.py'."
 sudo -Hu $(whoami) /usr/bin/python3.7 -B $(pwd)/configure_haskell.py
 
+
 # Download projects #
 
 echo "$LOG_PREFIX Run cmd '/bin/bash $(pwd)/../projects/download_git_projects.sh'."
 /bin/bash $(pwd)/../projects/download_git_projects.sh
+
+
+# Reference miscellaneous documentation #
+
+echo "$LOG_PREFIX For GNOME configuration, see '$(pwd)/CONFIGURE_GNOME.md'."
