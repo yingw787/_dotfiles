@@ -85,6 +85,22 @@ menu bar in the middle of the screen, configurable to hide when not needed.
     - "Icon Size" : "64" (or largest)
     - "Position on screen" : "Bottom"
 
+The Dock should now appear at the bottom, and hide automatically when not used.
+
+### Use default BIOS screen with spinner
+
+This uses the default screen (e.g. the Lenovo logo) with an attached spinner
+instead of having the purple Ubuntu screen by default.
+
+Install `plymouth-theme-spinner` to get this effect:
+
+```bash
+sudo apt-get install plymouth-theme-spinner
+```
+
+The theme should now be installed. Reboot the computer in order to see the
+effects.
+
 ## Date and Time
 
 ### Set time format from 24h to AM/PM
