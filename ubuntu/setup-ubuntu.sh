@@ -48,6 +48,9 @@ echo "$LOG_PREFIX Run cmd '/bin/bash $(pwd)/add_z.sh'."
 echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/configure_vscode.sh'."
 sudo -Hu $(whoami) /bin/bash $(pwd)/configure_vscode.sh
 
+echo "$LOG_PREFIX Run cmd 'sudo -Hu $(whoami) /bin/bash $(pwd)/configure_aws.sh'."
+sudo -Hu $(whoami) /bin/bash $(pwd)/configure_aws.sh
+
 
 # Add language/framework-specific tooling. #
 
