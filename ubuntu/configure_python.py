@@ -5,7 +5,7 @@
 # This installs Anaconda release '2019.10' as primary user Python.
 #
 # Usage:
-# - 'sudo -Hu $(whoami) /usr/bin/python3.7 configure_python.py'
+# - 'sudo -Hu $(whoami) /usr/bin/python3.7 -B configure_python.py'
 
 import os
 
