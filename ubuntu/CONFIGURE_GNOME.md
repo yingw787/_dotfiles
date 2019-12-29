@@ -101,6 +101,32 @@ sudo apt-get install plymouth-theme-spinner
 The theme should now be installed. Reboot the computer in order to see the
 effects.
 
+### Restart `gnome-shell` without having to reboot system
+
+Press 'Alt + F2' in order to open the "Run Command" prompt. When prompted, enter
+"r" in order to restart the shell.
+
+In case restarting the shell doesn't work if function keys map directly to other
+settings (e.g. to speakers or microphone), then re-map the keyboard shortcut. To
+do so, open application "Settings", and in the "Devices/Keyboard Shortcuts"
+menu, search for "Show the run command prompt". Click on the shortcut in order
+to remap.
+
+Currently my shortcut is mapped to "Alt + Return" (Enter key).
+
+### Have additional flexibility in tiling windows with default `gnome-shell`
+
+1.  Install `gtile` from source:
+
+    ```bash
+    git clone https://github.com/gTile/gTile.git ~/.local/share/gnome-shell/extensions/gTile@vibou
+    ```
+
+2.  Restart `gnome-shell`.
+
+3.  Open application `gnome-tweaks`. In menu "Extensions", enable `gtile` using
+    the radio buttons.
+
 ## Date and Time
 
 ### Set time format from 24h to AM/PM
