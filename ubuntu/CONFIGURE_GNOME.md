@@ -139,6 +139,19 @@ The time should now appear as AM/PM instead of 24-hour time.
 
 ## Miscellaneous
 
+### Set default applications
+
+In the "Activities" menu (opened with the "Window" key), open application
+"Startup Applications".
+
+Current programs opened with "Startup Applications" include:
+
+- `bitwarden` (password manager)
+- `firefox` (web browser)
+- `gnome-terminal --working-directory=$HOME` (terminal emulator)
+- `code` (IDE)
+- `standard-notes` (Notes application)
+
 ### Install Standard Notes
 
 Install from the Ubuntu Software Center, as I'm not sure how to fully configure
