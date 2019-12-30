@@ -45,4 +45,5 @@ In order to install RescueTime:
     available. When activated, it should have a toggle in the top-right menu
     bar.
 
--   Add `rescuetime` to application "Startup Applications".
+-   Add `rescuetime` to application "Startup Applications". This should also be
+    updated in `ubuntu/CONFIGURE_GNOME.md`.
