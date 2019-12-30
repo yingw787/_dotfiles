@@ -151,6 +151,7 @@ Current programs opened with "Startup Applications" include:
 - `gnome-terminal --working-directory=$HOME` (terminal emulator)
 - `code` (IDE)
 - `standard-notes` (Notes application)
+- `rescuetime` (Time tracker)
 
 ### Install Standard Notes
 
