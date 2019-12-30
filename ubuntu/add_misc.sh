@@ -18,3 +18,7 @@ sudo apt-get install -y xclip=0.13-1
 # Install 'ncdu' build 'ncdu/eoan 1.14.1-1 amd64' #
 echo "$LOG_PREFIX install 'ncdu' build 'ncdu/eoan 1.14.1-1 amd64'."
 sudo apt-get install -y ncdu=1.14.1-1
+
+# Install 'net-tools' including 'ifconfig' #
+echo "$LOG_PREFIX install 'net-tools'."
+sudo apt-get install -y net-tools
