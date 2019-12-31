@@ -86,10 +86,11 @@ To bypass this problem:
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     ```
 
-2.  Install `tmux` extension
-    [**`tmux-resurrect`**](https://github.com/tmux-plugins/tmux-resurrect) by
-    adding the following to `$HOME/.tmux.conf`:
+3.  Copy over `ubuntu/config/.tmux.config` to your `$HOME` directory.
 
-```text
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-```
+    ```bash
+    cp $(pwd)/config/.tmux.config $HOME/.tmux.config
+    ```
+
+4.  Kill the `tmux` server or source the `~/.tmux.config` file within the `tmux`
+    process in order to get the latest `.tmux` config.
