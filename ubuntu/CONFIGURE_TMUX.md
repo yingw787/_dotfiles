@@ -94,3 +94,10 @@ To bypass this problem:
 
 4.  Kill the `tmux` server or source the `~/.tmux.config` file within the `tmux`
     process in order to get the latest `.tmux` config.
+
+    This should get the `tmux` session to a working state with `tmux-resurrect`.
+
+5.  To save the current `tmux` session, press prefix (Ctrl + B) and (Ctrl + s).
+
+6.  To restore the previous `tmux` session, press prefix (Ctrl + B) and (Ctrl +
+    r).
