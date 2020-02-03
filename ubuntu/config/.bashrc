@@ -134,6 +134,12 @@ export PATH=$PATH:/usr/local/go/bin
 # Ensure that Python does not write bytecode.
 export PYTHONDONTWRITEBYTECODE=1
 #
+# Login to 'docker' group in order to avoid having to use 'sudo' with Docker.
+# Ensure that 'docker' has been set up beforehand; see 'CONFIGURE_DOCKER.md' for
+# more details.
+#
+newgrp docker
+#
 # End user section (80 characters long)
 #
 # --------------------------------------------------------------------------------
