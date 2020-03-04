@@ -97,6 +97,32 @@ In order to use a microphone on Ubuntu Linux, buy an external microphone.
 Otherwise, boot into the separate Windows partition using the Windows Boot
 Manager.
 
+## Resource Utilization
+
+### `firefox` is using too much memory
+
+Since I suspend my laptop using Window + L regularly, many processes during a
+session are long-lived. This is especially true for Firefox and the many tabs I
+keep open on a regular basis. Each tab uses about 10MB and sometimes up to 150MB
+of memory.
+
+At times, `firefox` has resulted in 75% of my 16GB of current laptop memory used
+up, which has resulted in video buffering, slower site performance, and other
+issues.
+
+Firefox Task Manager is available at `about:performance`, where the memory usage
+and energy efficiency of various tabs and add-ons are tracked. However, I have
+not seen closing certain tabs to result in immediately greater memory
+efficiency, and I'm not sure how Firefox's cache behaves underneath the hood and
+when memory is released.
+
+Besides rebooting the machine using `sudo reboot`, another method may be to
+switch to NVIDIA drivers in order to render graphics more efficiently. This
+command `sudo prime-select nvidia` involves a reboot to reload the drivers, but
+may cut down on RAM usage. After reboot, the same tabs that may take 75% take
+around 38%, though this may be flushing Firefox's cache due to reboot and may
+grow over time.
+
 ## Miscallaneous
 
 ### I want to download a playlist from YouTube with highest quality video/audio
