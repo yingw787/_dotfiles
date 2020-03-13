@@ -140,3 +140,50 @@ youtube-dl \
     -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' \ # Download as '.mp4', sync and splice best quality audio/video separately as they may be in separate files.
     https://www.youtube.com/playlist?list=${PLAYLIST} # ${PLAYLIST} is playlist ID.
 ```
+
+### Mouse cursor is frozen into a cross shape.
+
+[This Stack Overflow question and answer
+post](https://askubuntu.com/a/1031426/1032782) was my situation around 6:45PM ET
+on March 13th, 2020. According to the answer, run `killall -KILL import` in
+order to fix; this worked for me. For posterity:
+
+>   I have Ubuntu 16.04. The last thing I remember typing into the terminal was
+>   `import python` This was done by mistake and I `Ctrl`+`Z` after to end that
+>   process. I had `pip uninstall monary` maybe before that.
+>
+>   But right now, the mouse is stuck as a plus (imagine a plus made of corners
+>   of 4 adjacent squares with very slight space in between). It can't click,
+>   though the cursor can move anywhere in the screen. I even tried an external
+>   mouse but the result is the same.
+>
+>   I am planning to restart my computer and it might solve the issue. But, I
+>   want to know what caused this, and if it happens again what should I do?
+
+__________
+
+>   import is the command to create a screenshot, provided by the ImageMagick
+>  tool suite.
+>
+>   When you run
+>
+>   ```python
+>   import something
+>   ```
+>
+>   as shell command, it will show you a crosshair cursor to select a
+>   rectangular area of the screen for capturing, and then save that as file
+>   `something`.
+>
+>   Now you pressed `Ctrl`+`Z`, which is the shortcut for freezing a process and
+>   returning to the command prompt in Bash. So `import` is still "running" (not
+>   exactly - it's frozen, but still existing) and didn't get a chance to exit
+>   or return control over the mouse and screen.
+>
+>   You have to continue the `import` process by e.g. thawing it and getting it
+>   back to the foreground of the shell using the `fg` Bash command. It will
+>   probably exit immediately then, otherwise you can terminate it with
+>   `Ctrl`+`C`.
+>
+>   Alternatively, you could also just kill the process by closing the parent
+>   terminal window/Bash session or using a command like `killall -KILL import`.
