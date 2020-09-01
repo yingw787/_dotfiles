@@ -138,7 +138,13 @@ export PYTHONDONTWRITEBYTECODE=1
 # Ensure that 'docker' has been set up beforehand; see 'CONFIGURE_DOCKER.md' for
 # more details.
 #
-newgrp docker
+# Switch groups, but only if necessary, this to prevent increasing $SHLVL:
+# https://stackoverflow.com/a/59413281
+if [[ `id -gn` != "docker" ]]
+then
+    newgrp docker
+    exit
+fi
 #
 # End user section (80 characters long)
 #
