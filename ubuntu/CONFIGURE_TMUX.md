@@ -86,18 +86,31 @@ To bypass this problem:
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     ```
 
+    Also install all necessary `tmux` plugins including:
+
+    ```bash
+    git clone https://github.com/tmux-plugins/tmux-sensible ~/.tmux/plugins/tmux-sensible
+    git clone https://github.com/tmux-plugins/tmux-resurrect ~/.tmux/plugins/tmux-resurrect
+    git clone https://github.com/tmux-plugins/tmux-continuum ~/.tmux/plugins/tmux-continuum
+    ```
+
 3.  Copy over `ubuntu/config/.tmux.config` to your `$HOME` directory.
 
     ```bash
     cp $(pwd)/config/.tmux.config $HOME/.tmux.config
     ```
 
-4.  Kill the `tmux` server or source the `~/.tmux.config` file within the `tmux`
-    process in order to get the latest `.tmux` config.
+4.  Kill any `tmux` servers currently running.
+
+5.  Start a new `tmux` session called `base` using `tmux new-session -t base
+    -d`.
+
+6.  Load config `~/.tmux.conf` using `tmux source-file -nv ~/.tmux.conf` or go
+    into the `tmux` session and run `:source-file ~/.tmux.conf`.
 
     This should get the `tmux` session to a working state with `tmux-resurrect`.
 
-5.  To save the current `tmux` session, press prefix (Ctrl + B) and (Ctrl + s).
+7.  To save the current `tmux` session, press prefix (Ctrl + B) and (Ctrl + s).
 
-6.  To restore the previous `tmux` session, press prefix (Ctrl + B) and (Ctrl +
+8.  To restore the previous `tmux` session, press prefix (Ctrl + B) and (Ctrl +
     r).
