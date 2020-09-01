@@ -43,7 +43,11 @@ In order to install RescueTime:
 
     Application "RescueTime" as command line `rescuetime` should now be
     available. When activated, it should have a toggle in the top-right menu
-    bar.
+    bar. Activate it using command:
+
+    ```bash
+    nohup rescuetime > /dev/null 2>&1 &
+    ```
 
 -   Add `rescuetime` to application "Startup Applications". This should also be
     updated in `ubuntu/CONFIGURE_GNOME.md`.
