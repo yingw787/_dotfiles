@@ -146,6 +146,10 @@ then
     exit
 fi
 #
+# Alias 'nx' (JavaScript monorepo build tool) in order to reference the version
+# of 'nx' present within a given monorepo, do NOT globally install!
+alias nx='npm run nx'
+#
 # End user section (80 characters long)
 #
 # --------------------------------------------------------------------------------
